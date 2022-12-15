@@ -4,7 +4,6 @@ module Trackonomics
   module Login
     def login
       response = HTTP.headers(login_headers).post("#{base_url}/login", body: login_body)
-      binding.pry
       response.dig('user', 'authentication_token')
     end
 
